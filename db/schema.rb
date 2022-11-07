@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2022_11_07_191851) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "product_id"
   end
 
   create_table "products", force: :cascade do |t|
