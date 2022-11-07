@@ -1,4 +1,4 @@
-class ApplicaitonController < Sinatra::Base
+class ApplicationController < Sinatra::Base
 
     set :default_content_type, "application/json"
 
@@ -10,5 +10,7 @@ class ApplicaitonController < Sinatra::Base
     options "*" do
         response.headers['Access-Control-Allow-Methods'] = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
     end
+
+
 
 end
