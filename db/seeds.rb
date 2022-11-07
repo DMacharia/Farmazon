@@ -1,3 +1,10 @@
+puts "Deleting old data..."
+User.destroy_all
+Category.destroy_all
+Product.destroy_all
+User.destroy_all
+Review.destroy_all
+
 puts "Creating users..."
 User.create(name: Faker::Name.name)
 User.create(name: Faker::Name.name)
@@ -24,3 +31,19 @@ Category.all.each do |category|
         )
     end
 end
+
+puts "Creating reviews..."
+
+15.times do 
+    user_ids = User.all.map {|user| user.id}
+    product_ids = Product.all.map {|product| product.id}
+    
+    Review.create(
+        user_id: user_ids[rand(0..4)],
+        product_id: product_ids[rand(0..29)],
+        star_rating: rand(1..10),
+        comment: Faker::Lorem.sentence(word_count: rand(1...10))
+    )
+end
+
+puts "Seeding done!"
