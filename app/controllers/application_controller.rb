@@ -14,6 +14,10 @@ class ApplicationController < Sinatra::Base
     get '/categories' do
         Category.all.to_json
       end
+      get '/categories/:id' do
+        Category.find(params[:id]).to_json
+      end
+      
 
       get '/products' do
         Product.all.to_json
