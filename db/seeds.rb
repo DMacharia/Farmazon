@@ -17,36 +17,7 @@ Category.create(name: "Tools")
 Category.create(name: "Fertilizer")
 Category.create(name: "Feeds")
 
-
-
-# puts "Creating products..."
-# Category.all.each do |category|
-#     10.times do
-#         Product.create(
-#             name: Faker::Lorem.sentence(word_count: 1),
-#             price: rand(100..150),
-#             category_id: category.id,
-#             description: Faker::Lorem.paragraph(sentence_count: 1),
-#             image_url: Faker::LoremFlickr.image(size: "50x60", search_terms: ['Fertilizer', 'Feeds', 'Tools'], match_all: true)
-#         )
-#     end
-# end
-
-    puts "Creating reviews..."
-
-    15.times do 
-        user_ids = User.all.map {|user| user.id}
-        product_ids = Product.all.map {|product| product.id}
-        
-        Review.create(
-            user_id: user_ids[rand(0..4)],
-            product_id: product_ids[rand(0..29)],
-            star_rating: rand(1..10),
-            comment: Faker::Lorem.sentence(word_count: rand(1...10))
-        )
-    end
-
-    puts "Seeding done!"
+   
 
 # real product data
 puts "Creating products..."
@@ -85,6 +56,8 @@ Product.create(name: "sprinklers", price: 300,category_id: 4, description: "",
     image_url: "https://res.cloudinary.com/dghmulj4i/image/upload/v1667890182/farm%20apps/195deb24c18d213a_pfsfk1.jpg")
 
 
+    # creating for fertilizers and seeds
+
 Product.create(name: "ultravetis-tomato-twiga", price: 78,category_id:5 , description: "",
     image_url: "https://res.cloudinary.com/dghmulj4i/image/upload/v1667890562/farm%20apps/Ultravetis-Tomato-Twiga-F1-100-Seeds_Seeds_27366_1_pfwrsm.png")
 Product.create(name: "ultravetis-cabbage-seed-kiboko", price: 988,category_id: 5, description: "",
@@ -111,6 +84,8 @@ Product.create(name: "trevin-dudu-dust", price:300 ,category_id: 5, description:
      image_url:"https://res.cloudinary.com/dghmulj4i/image/upload/v1667890499/farm%20apps/KL793_9551-1-244x244_s1shho.jpg" )
 
 
+# creating for feeds
+
 Product.create(name: "vital-kondoo-feeds", price: 300,category_id: 6, description: "vital kondoo", 
     image_url: "https://res.cloudinary.com/dghmulj4i/image/upload/v1667890570/farm%20apps/Vital-Kondoo-1kg_Feeds_27122_1-244x244_qyihqi.png")
 Product.create(name: "vital-ndama-feeds", price: 300,category_id: 6, description: "", 
@@ -134,46 +109,20 @@ Product.create(name: "twiga-lick-joto", price: 300,category_id: 6, description: 
 Product.create(name: "twiga-lick-ndama", price: 300,category_id: 6, description: "",
         image_url: "https://res.cloudinary.com/dghmulj4i/image/upload/v1667890472/farm%20apps/KL768_9389-1-244x244_sdcnvo.jpg")
    
-# Product.create(name: "", price: ,category_id: 3, description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: 3, description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: 3, description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: 3, description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: 3, description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
 
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url:"")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
-# Product.create(name: "", price: ,category_id: , description: "", image_url: "")
+ # puts "Creating reviews..."
 
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url:"" )
-# Product.create(name: "", price: ,category_id: , description: , image_url:"" )
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url:"")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
-# Product.create(name: "", price: ,category_id: , description: , image_url: "")
+ 15.times do 
+    user_ids = User.all.map {|user| user.id}
+    product_ids = Product.all.map {|product| product.id}
+    
+    Review.create(
+        user_id: user_ids[rand(0..4)],
+        product_id: product_ids[rand(0..29)],
+        star_rating: rand(1..10),
+        comment: Faker::Lorem.sentence(word_count: rand(1...10))
+    )
+end
+
+puts "Seeding done!"
 
