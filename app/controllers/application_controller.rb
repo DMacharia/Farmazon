@@ -34,6 +34,14 @@ class ApplicationController < Sinatra::Base
     get "/products/:category" do 
         Product.find_by(category: params[:category]).to_json
     end
+
+    get "/review" do 
+        Review.all.to_json
+    end
+
+    get '/review' do
+        "Hello World"
+      end
     #create user
     post '/user' do 
         user = User.create(
@@ -41,6 +49,13 @@ class ApplicationController < Sinatra::Base
         ) 
         user.to_json
         end
+
+    post '/review' do 
+         user = Review.create(
+         comment: params[:comment]  
+         ) 
+         user.to_json
+    end
     
     #update user/name
       patch '/user/:id'do 
