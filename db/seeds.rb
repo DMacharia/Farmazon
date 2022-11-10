@@ -11,12 +11,7 @@ User.create(name: Faker::Name.name)
 User.create(name: Faker::Name.name)
 User.create(name: Faker::Name.name)
 
-# puts "Creating category..."
-# Category.create(name: "Tools")
-# Category.create(name: "Fertilizer")
-# Category.create(name: "Feeds")
-
-   
+ 
 
 # real product data
 puts "Creating products..."
