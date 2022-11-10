@@ -1,18 +1,25 @@
 class ApplicationController < Sinatra::Base
-
-    set :default_content_type, "application/json"
-
-    set :bind, '0.0.0.0'
+  set :default_content_type, 'application/json'
+  # To enable cross origin requests for all routes:
+  set :bind, '8000'
   configure do
     enable :cross_origin
   end
   before do
     response.headers['Access-Control-Allow-Origin'] = '*'
   end
-    #enable CORS preflight requests
-    options "*" do
-        response.headers['Access-Control-Allow-Methods'] = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-    end
+  
+  # routes...
+  options "*" do
+    response.headers["Allow"] = "GET, PUT, POST, DELETE, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Authorization, Content-Type, Accept, X-User-Email, X-Auth-Token"
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    200
+  end
+
+
+
+
 
     get '/categories' do
         Category.all.to_json
@@ -21,8 +28,7 @@ class ApplicationController < Sinatra::Base
       # get '/categories/:id' do
       #   Category.find(params[:id]).to_json
       # end
-
-      # get '/categories/:id' do
+          # get '/categories/:id' do
       #   requested_category = Category.where(:id => params[:id])
     
       #   if requested_category == []
